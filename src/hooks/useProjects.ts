@@ -1,9 +1,9 @@
-import projects from '../data/projects'
+import projects from '../data/projects';
 
 export function useProjects() {
-  function getProjects() {
-    return projects
-  }
+    function getProjects() {
+        return projects;
+    }
 
-  return { getProjects }
+    return { getProjects };
 }

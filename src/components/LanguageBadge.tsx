@@ -1,9 +1,9 @@
-import { Badge } from '@/components/ui/badge'
+import { Badge } from '@/components/ui/badge';
 
 type LanguageBadgeProps = {
-  name: string
-}
+    name: string;
+};
 
 export default function LanguageBadge({ name }: LanguageBadgeProps) {
-  return <Badge>{name}</Badge>
+    return <Badge>{name}</Badge>;
 }
