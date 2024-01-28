@@ -14,8 +14,8 @@ export default function About() {
                     Santa Maria, Rio Grande do Sul
                 </Link>
                 , but I have the dream to live abroad and I think that this
-                dream is close to becomes reality because I already work for a
-                company in europe 😀.
+                dream is close to becomes reality because I recently got a job
+                at a company in Europe.
             </p>
             <h1 className="text-4xl font-bold mt-7 mb-5">Hobbies</h1>
             <p className="text-lg">
@@ -40,13 +40,13 @@ export default function About() {
                 really far from my home and I thought that it would be more
                 productive to study at home and I don't regret it. <br />
                 After a few months studying I got a internship at one startup of
-                my city and I stayed there for almost 2 years, until I got the
-                job I have today at a company in London.
+                my city and I stayed there for almost 2 years, until I got my
+                current job at a company in London.
                 <br />
                 <br />
-                Nowadays I really love to share my knowledge my others, creating
-                articles trying to help everyone in this journey to learn
-                programming.
+                Nowadays I really love to share my knowledge with others,
+                creating articles trying to help everyone in this journey to
+                learn programming.
             </p>
         </div>
     );
