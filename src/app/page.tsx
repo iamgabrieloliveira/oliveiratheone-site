@@ -38,7 +38,7 @@ export default function Home() {
     return (
         <div>
             <div>
-                <h1 className="text-5xl font-bold mb-2">Hello World</h1>
+                <h1 className="text-5xl font-bold mb-2">Welcome!</h1>
                 <h2 className="text-3xl">I'm Gabriel Oliveira</h2>
                 <div className="mt-4">
                     <p className="text-lg">
