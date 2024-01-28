@@ -1,3 +1,5 @@
+'use client';
+
 import {
     Card,
     CardContent,
@@ -6,9 +8,9 @@ import {
     CardHeader,
     CardTitle,
 } from '@/components/ui/card';
-import ProjectInfoDialog from '@/components/ProjectInfoDialog';
+import ProjectInfoDialog from '@/components/project-info-dialog';
 import type { Project } from '@/data/projects';
-import LanguageBadge from '@/components/LanguageBadge';
+import LanguageBadge from '@/components/language-badge';
 
 export default function ProjectCard({
     title,

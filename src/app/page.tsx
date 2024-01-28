@@ -1,38 +1,43 @@
-import Header from '@/components/Header';
-import { Separator } from '@/components/ui/separator';
-import ProjectCard from '@/components/ProjectCard';
-import { useProjects } from '@/hooks/useProjects';
-import { ThemeToggle } from '@/components/ThemeToggle';
-import { GitHubLogoIcon, TwitterLogoIcon } from '@radix-ui/react-icons';
-import Link from 'next/link';
+'use client';
 
-export default async function Home() {
+import { Separator } from '@/components/ui/separator';
+import ProjectCard from '@/components/project-card';
+import { useProjects } from '@/hooks/useProjects';
+import SearchInput from '@/components/ui/search-input';
+import { useEffect, useState } from 'react';
+import { Project } from '@/data/projects';
+import ProjectCardSkeleton from '@/components/ui/project-card-skeleton';
+
+const filterProjects = (projects: Project[], search: string) => {
+    return projects.filter(({ title, description, languages }) => {
+        const matchLanguages = languages.some((l) => l.includes(search));
+        return (
+            title.includes(search) ||
+            description.includes(search) ||
+            matchLanguages
+        );
+    });
+};
+
+export default function Home() {
     const { getProjects } = useProjects();
 
-    const projects = getProjects();
+    const [isLoading, setIsLoading] = useState(true);
+    const [search, setSearch] = useState<string | undefined>();
+    const [projects, setProjects] = useState<Project[]>([]);
+
+    useEffect(() => {
+        const projects = getProjects();
+        setProjects(projects);
+        setIsLoading(false);
+    }, []);
+
+    const filteredProjects =
+        search === undefined ? projects : filterProjects(projects, search);
 
     return (
-        <div className="pt-5 max-w-3xl mx-auto">
-            <div className="flex justify-between">
-                <Header />
-                <div className="flex gap-4 items-center">
-                    <Link
-                        target="_blank"
-                        href="https://github.com/iamgabrieloliveira"
-                    >
-                        <GitHubLogoIcon className="size-6" />
-                    </Link>
-                    <Link
-                        target="_blank"
-                        href="https://twitter.com/oliveiratheone"
-                    >
-                        <TwitterLogoIcon className="size-6" />
-                    </Link>
-                    <ThemeToggle />
-                </div>
-            </div>
-
-            <div className="mt-20">
+        <div>
+            <div>
                 <h1 className="text-5xl font-bold mb-2">Hello World</h1>
                 <h2 className="text-3xl">I'm Gabriel Oliveira</h2>
                 <div className="mt-4">
@@ -50,12 +55,29 @@ export default async function Home() {
             </div>
             <Separator className="my-5" />
             <div>
-                <h1 className="text-3xl font-bold">Projects</h1>
-
+                <h1 className="mb-5 text-3xl font-bold">Projects</h1>
+                <SearchInput
+                    onChange={(event) => setSearch(event.target.value)}
+                    className="max-w-xl"
+                    placeholder="Search by name, description or technologies"
+                />
                 <div className="mt-4 flex flex-wrap gap-4">
-                    {projects.map((project, idx) => {
-                        return <ProjectCard key={idx} {...project} />;
-                    })}
+                    {isLoading ? (
+                        [
+                            <ProjectCardSkeleton />,
+                            <ProjectCardSkeleton />,
+                            <ProjectCardSkeleton />,
+                            <ProjectCardSkeleton />,
+                            <ProjectCardSkeleton />,
+                            <ProjectCardSkeleton />,
+                        ]
+                    ) : filteredProjects.length > 0 ? (
+                        filteredProjects.map((project, idx) => (
+                            <ProjectCard key={idx} {...project} />
+                        ))
+                    ) : (
+                        <h1>No entries found</h1>
+                    )}
                 </div>
             </div>
         </div>

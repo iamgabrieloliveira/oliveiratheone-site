@@ -1,6 +1,5 @@
 import {
     Dialog,
-    DialogClose,
     DialogContent,
     DialogDescription,
     DialogFooter,
@@ -10,6 +9,8 @@ import {
 } from '@/components/ui/dialog';
 import React from 'react';
 import { Project } from '@/data/projects';
+import { GitHubLogoIcon } from '@radix-ui/react-icons';
+import Link from 'next/link';
 
 type ProjectInfoDialog = Project & {
     children: React.ReactNode;
@@ -19,6 +20,8 @@ export default function ProjectInfoDialog({
     children,
     title,
     description,
+    languages,
+    githubUrl,
 }: ProjectInfoDialog) {
     return (
         <Dialog>
@@ -29,10 +32,14 @@ export default function ProjectInfoDialog({
                     <DialogDescription>{description}</DialogDescription>
                 </DialogHeader>
                 <div className="flex items-center space-x-2">
-                    <div className="grid flex-1 gap-2"></div>
+                    <div className="grid flex-1 gap-2">
+                        Languages: {languages.join(', ')}
+                    </div>
                 </div>
                 <DialogFooter className="sm:justify-start">
-                    <DialogClose asChild></DialogClose>
+                    <Link href={githubUrl}>
+                        <GitHubLogoIcon className="size-5" />
+                    </Link>
                 </DialogFooter>
             </DialogContent>
         </Dialog>
