@@ -2,6 +2,14 @@ import { ArticleCard } from '@/components/article-card';
 
 export default [
     {
+        title: 'How integers are stored in computer memory',
+        publishedAt: 'Jan 28, 2024',
+        imageSrc: '/articles-banners/binary-code.png',
+        imageAlt: 'Binary Code',
+        url: 'https://dev.to/oliveiratheone/how-integers-are-stored-in-computer-memory-1037',
+        tags: ['Computer Science', 'Low Level Programming'],
+    },
+    {
         title: 'Single Responsibility Principle in Laravel',
         publishedAt: 'Oct 11, 2023',
         imageSrc: '/articles-banners/single-responsibility-principle.png',
