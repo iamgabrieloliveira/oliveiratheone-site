@@ -4,7 +4,7 @@ export default [
     {
         title: 'How integers are stored in computer memory',
         publishedAt: 'Jan 28, 2024',
-        imageSrc: '/articles-banners/binary-code.png',
+        imageSrc: '/articles-banners/how-integers-are-stored-in-computer.png',
         imageAlt: 'Binary Code',
         url: 'https://dev.to/oliveiratheone/how-integers-are-stored-in-computer-memory-1037',
         tags: ['Computer Science', 'Low Level Programming'],
