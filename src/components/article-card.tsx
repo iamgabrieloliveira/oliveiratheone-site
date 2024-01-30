@@ -3,7 +3,7 @@ import LanguageBadge from '@/components/language-badge';
 
 export type ArticleCard = {
     title: string;
-    publishedAt: string;
+    publishedAt: Date;
     imageSrc: string;
     imageAlt: string;
     url: string;
@@ -26,7 +26,13 @@ export default function ArticleCard({
                 alt={imageAlt}
             />
             <h1 className="text-xl font-semibold">{title}</h1>
-            <p className="text-zinc-600 font-semibold mb-1">{publishedAt}</p>
+            <p className="text-zinc-600 font-semibold mb-1">
+                {publishedAt.toLocaleString('en-US', {
+                    month: 'short',
+                    day: '2-digit',
+                    year: 'numeric',
+                })}
+            </p>
             <div className="flex flex-wrap gap-2">
                 {tags.map((tag, idx) => (
                     <LanguageBadge key={idx} name={tag} />
