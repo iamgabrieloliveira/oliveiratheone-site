@@ -13,7 +13,9 @@ type DevToArticle = {
 type Response = DevToArticle[];
 
 const loadArticles = async (): Promise<Response> => {
-    const response = await fetch(process.env.ARTICLES_API_URL as string);
+    const response = await fetch(process.env.ARTICLES_API_URL as string, {
+        cache: 'reload',
+    });
     return response.json();
 };
 
