@@ -7,13 +7,25 @@ export type Project = {
 
 export default [
     {
-        title: 'Laracrab',
-        githubUrl: 'https://github.com/iamgabrieloliveira/laracrab',
-        description: 'Rust framework for building APIs inspired by laravel',
+        title: 'Rinha Backend Q1/2024',
+        githubUrl: 'https://github.com/iamgabrieloliveira/rinha-backend-q1',
+        description: 'My implementation for Rinha de Backend Q1/2024',
         languages: ['Rust'],
     },
     {
-        title: 'Easy Enum',
+        title: 'Shunting Yard + Reverse Polish Notation',
+        githubUrl: 'https://github.com/iamgabrieloliveira/Shunting-Yard-Reverse-Polish-Notation',
+        description: 'Implementation of Shunting Yard and RPN algorithms to evaluate math expression without using \'eval\' like',
+        languages: ['Typescript'],
+    },
+    {
+        title: '99 Problems Ocaml',
+        githubUrl: 'https://github.com/iamgabrieloliveira/99-problems-ocaml',
+        description: 'Solving 99 Problems in Ocaml to practice the language',
+        languages: ['Ocaml'],
+    },
+    {
+        title: 'Easy Enum - (wip)',
         githubUrl: 'https://github.com/iamgabrieloliveira/easy-enum',
         description: 'PHP Enums generator based on database dumps',
         languages: ['Rust'],
@@ -36,11 +48,5 @@ export default [
             'https://github.com/iamgabrieloliveira/computer-science-roadmap',
         description: 'My journey studying computer science concepts',
         languages: ['Typescript', 'C'],
-    },
-    {
-        title: 'Dev Blog',
-        githubUrl: 'https://github.com/iamgabrieloliveira/dev-blog',
-        description: 'My personal blog for posting articles',
-        languages: ['Astro'],
     },
 ] as Project[];
