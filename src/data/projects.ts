@@ -14,8 +14,10 @@ export default [
     },
     {
         title: 'Shunting Yard + Reverse Polish Notation',
-        githubUrl: 'https://github.com/iamgabrieloliveira/Shunting-Yard-Reverse-Polish-Notation',
-        description: 'Implementation of Shunting Yard and RPN algorithms to evaluate math expression without using \'eval\' like',
+        githubUrl:
+            'https://github.com/iamgabrieloliveira/Shunting-Yard-Reverse-Polish-Notation',
+        description:
+            "Implementation of Shunting Yard and RPN algorithms to evaluate math expression without using 'eval' like",
         languages: ['Typescript'],
     },
     {
