@@ -7,6 +7,12 @@ export type Project = {
 
 export default [
     {
+        title: 'Lightning Path',
+        githubUrl: 'https://github.com/iamgabrieloliveira/Lightning-Path',
+        description: 'Route Recognizer library for lightning-fast matching',
+        languages: ['Rust'],
+    },
+    {
         title: 'Rinha Backend Q1/2024',
         githubUrl: 'https://github.com/iamgabrieloliveira/rinha-backend-q1',
         description: 'My implementation for Rinha de Backend Q1/2024',
@@ -25,12 +31,6 @@ export default [
         githubUrl: 'https://github.com/iamgabrieloliveira/99-problems-ocaml',
         description: 'Solving 99 Problems in Ocaml to practice the language',
         languages: ['Ocaml'],
-    },
-    {
-        title: 'Easy Enum - (wip)',
-        githubUrl: 'https://github.com/iamgabrieloliveira/easy-enum',
-        description: 'PHP Enums generator based on database dumps',
-        languages: ['Rust'],
     },
     {
         title: 'Mind Share',
