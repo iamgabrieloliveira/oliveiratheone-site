@@ -12,9 +12,7 @@ const filterProjects = (projects: Project[], search: string) => {
     return projects.filter(({ title, description, tags }) => {
         const matchTags = tags.some((t) => t.includes(search));
         return (
-            title.includes(search) ||
-            description.includes(search) ||
-            matchTags
+            title.includes(search) || description.includes(search) || matchTags
         );
     });
 };
@@ -32,8 +30,9 @@ export default function Home() {
         setIsLoading(false);
     }, []);
 
-    const filteredProjects =
-        !search ? projects : filterProjects(projects, search);
+    const filteredProjects = !search
+        ? projects
+        : filterProjects(projects, search);
 
     return (
         <div>

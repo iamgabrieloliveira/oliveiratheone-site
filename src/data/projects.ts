@@ -26,8 +26,10 @@ export default [
     },
     {
         title: 'Algebraic Data Types',
-        githubUrl: 'https://gist.github.com/iamgabrieloliveira/dbbe088072f5e3caacb536c1bb22e3f5',
-        description: 'Brief explanation of Algebraic Data Types with Typescript examples',
+        githubUrl:
+            'https://gist.github.com/iamgabrieloliveira/dbbe088072f5e3caacb536c1bb22e3f5',
+        description:
+            'Brief explanation of Algebraic Data Types with Typescript examples',
         tags: ['Gist', 'Type Theory', 'Typescript'],
     },
     {

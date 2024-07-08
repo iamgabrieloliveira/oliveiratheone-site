@@ -19,9 +19,9 @@ export default function About() {
             <p className="text-lg">
                 My mother taught me to play the piano when I was child and a
                 love to play it, I like building legos, and most of the time
-                play games on my computer, such as: Elden Ring, Valorant, CSGO, League of
-                Legends sometimes. I like to study different things like,
-                astronomy, physics and neuroscience.
+                play games on my computer, such as: Elden Ring, Valorant, CSGO,
+                League of Legends sometimes. I like to study different things
+                like, astronomy, physics and neuroscience.
             </p>
             <h1 className="text-4xl font-bold mt-7 mb-5">
                 Programming History
