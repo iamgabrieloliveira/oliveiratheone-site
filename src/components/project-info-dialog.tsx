@@ -20,7 +20,7 @@ export default function ProjectInfoDialog({
     children,
     title,
     description,
-    languages,
+    tags,
     githubUrl,
 }: ProjectInfoDialog) {
     return (
@@ -33,11 +33,11 @@ export default function ProjectInfoDialog({
                 </DialogHeader>
                 <div className="flex items-center space-x-2">
                     <div className="grid flex-1 gap-2">
-                        Languages: {languages.join(', ')}
+                        Tags: {tags.join(', ')}
                     </div>
                 </div>
                 <DialogFooter className="sm:justify-start">
-                    <Link href={githubUrl}>
+                    <Link href={githubUrl} target="_blank">
                         <GitHubLogoIcon className="size-5" />
                     </Link>
                 </DialogFooter>
