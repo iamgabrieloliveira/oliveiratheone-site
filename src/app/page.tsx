@@ -9,12 +9,10 @@ import { Project } from '@/data/projects';
 import ProjectCardSkeleton from '@/components/ui/project-card-skeleton';
 
 const filterProjects = (projects: Project[], search: string) => {
-    return projects.filter(({ title, description, languages }) => {
-        const matchLanguages = languages.some((l) => l.includes(search));
+    return projects.filter(({ title, description, tags }) => {
+        const matchTags = tags.some((t) => t.includes(search));
         return (
-            title.includes(search) ||
-            description.includes(search) ||
-            matchLanguages
+            title.includes(search) || description.includes(search) || matchTags
         );
     });
 };
@@ -32,8 +30,9 @@ export default function Home() {
         setIsLoading(false);
     }, []);
 
-    const filteredProjects =
-        search === undefined ? projects : filterProjects(projects, search);
+    const filteredProjects = !search
+        ? projects
+        : filterProjects(projects, search);
 
     return (
         <div>
@@ -59,18 +58,18 @@ export default function Home() {
                 <SearchInput
                     onChange={(event) => setSearch(event.target.value)}
                     className="max-w-xl"
-                    placeholder="Search by name, description or technologies"
+                    placeholder="Search by name, description or tags"
                 />
                 <div className="mt-4 flex flex-wrap gap-4">
                     {isLoading ? (
-                        [
-                            <ProjectCardSkeleton />,
-                            <ProjectCardSkeleton />,
-                            <ProjectCardSkeleton />,
-                            <ProjectCardSkeleton />,
-                            <ProjectCardSkeleton />,
-                            <ProjectCardSkeleton />,
-                        ]
+                        <>
+                            <ProjectCardSkeleton />
+                            <ProjectCardSkeleton />
+                            <ProjectCardSkeleton />
+                            <ProjectCardSkeleton />
+                            <ProjectCardSkeleton />
+                            <ProjectCardSkeleton />
+                        </>
                     ) : filteredProjects.length > 0 ? (
                         filteredProjects.map((project, idx) => (
                             <ProjectCard key={idx} {...project} />

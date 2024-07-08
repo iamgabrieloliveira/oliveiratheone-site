@@ -12,20 +12,22 @@ import ProjectInfoDialog from '@/components/project-info-dialog';
 import type { Project } from '@/data/projects';
 import LanguageBadge from '@/components/language-badge';
 
+type ProjectCardProps = Project;
+
 export default function ProjectCard({
     title,
     githubUrl,
     description,
-    languages,
-}: Project) {
+    tags,
+}: ProjectCardProps) {
     return (
         <ProjectInfoDialog
             title={title}
             description={description}
-            languages={languages}
+            tags={tags}
             githubUrl={githubUrl}
         >
-            <Card className="w-[350px] cursor-pointer">
+            <Card className="flex flex-col justify-between w-[350px] cursor-pointer">
                 <CardHeader>
                     <CardTitle>{title}</CardTitle>
                 </CardHeader>
@@ -34,8 +36,8 @@ export default function ProjectCard({
                 </CardContent>
                 <CardFooter>
                     <div className="flex flex-wrap gap-2">
-                        {languages.map((language, idx) => {
-                            return <LanguageBadge key={idx} name={language} />;
+                        {tags.map((tag, idx) => {
+                            return <LanguageBadge key={idx} name={tag} />;
                         })}
                     </div>
                 </CardFooter>
