@@ -13,17 +13,15 @@ export default function About() {
                 <Link className="underline" href={SANTA_MARIA_MAPS_URL}>
                     Santa Maria, Rio Grande do Sul
                 </Link>
-                , but I have the dream to live abroad and I think that this
-                dream is close to becomes reality because I recently got a job
-                at a company in Europe.
+                , but I have the dream to live abroad.
             </p>
             <h1 className="text-4xl font-bold mt-7 mb-5">Hobbies</h1>
             <p className="text-lg">
                 My mother taught me to play the piano when I was child and a
                 love to play it, I like building legos, and most of the time
-                play games on my computer, such as: Valorant, CSGO, League of
+                play games on my computer, such as: Elden Ring, Valorant, CSGO, League of
                 Legends sometimes. I like to study different things like,
-                astronomy, physics and neuroscience
+                astronomy, physics and neuroscience.
             </p>
             <h1 className="text-4xl font-bold mt-7 mb-5">
                 Programming History
